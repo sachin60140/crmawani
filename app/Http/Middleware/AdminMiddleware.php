@@ -24,14 +24,14 @@ class AdminMiddleware
             else
             {
                 Auth::logout();
-                return redirect('admin');
+                return redirect('/');
             }
             
         }
         else
         {
             Auth::logout();
-            return redirect('admin');
+            return redirect('/');
         }
     }
 }
