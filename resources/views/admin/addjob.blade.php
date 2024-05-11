@@ -89,7 +89,7 @@ input::-webkit-inner-spin-button {
                         <label for="inputName5" class="form-label">S/N: / IMEI Number 2 <span
                                 style="color: red;">*</span></label>
                         <input type="text" class="form-control" id="inputName5" value="{{ old('imei_2') }}"
-                            name="imei_2" required>
+                            name="imei_2">
                     </div>
                     <div class="col-md-6">
                         <label for="inputName5" class="form-label">Defect Reported <span

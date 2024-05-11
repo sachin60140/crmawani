@@ -343,6 +343,7 @@ class AuthController extends Controller
         echo $diff->format("%R%a days");
 
     }
+    
     function pass()
     {
          dd(Hash::make('Sachin'));
@@ -360,8 +361,6 @@ class AuthController extends Controller
         $differenceInDays = $end->diffInDays($start);
         
         return $differenceInDays;
-
-        
 
     }
 
