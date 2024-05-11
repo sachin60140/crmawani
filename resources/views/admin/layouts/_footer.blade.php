@@ -1,6 +1,6 @@
 <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>Sars Infotech Pvt Ltd</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Awani Enterprises</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       

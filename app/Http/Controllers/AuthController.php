@@ -372,12 +372,10 @@ class AuthController extends Controller
     public function viewpdf($id)
     {
         $data['getRecords'] = ServiceJobModel::getpdfRecord($id);
+        $jobid= $data['getRecords'][0]['job_no'];
 
         $pdf = Pdf::loadView('admin.pdf',$data);
-        return $pdf->download('JobSheet.pdf');
-
-        //return view('admin.pdf',$data);
-
+        return $pdf->download($jobid.'.pdf');
     }
         
     
