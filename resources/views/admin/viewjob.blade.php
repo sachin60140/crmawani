@@ -33,7 +33,7 @@
                   {{-- <h5 class="card-title"><a href="{{url("admin/employee/generate-pdf")}}" target="_blank" > click me to pdf </a></h5> --}}
                   
                   <!-- Table with stripped rows -->
-                  <table class="table display" id="example" style="font-size: 12px;">
+                  <table class="table display" id="example" style="font-size: 13px;">
                     <thead >
                       <tr >
                         <th scope="col" >#</th>
@@ -63,12 +63,12 @@
                             <td>{{ $items->defect }}</td>
                             <td>{{ $items->estimate }}</td>
                             <td>
-                              <a href="" class=" btn btn-sm btn-{{$items->status ? 'danger' : 'success'}}">
+                              <a href="" class=" badge bg-{{$items->status ? 'danger' : 'success'}}">
                                 {{$items->status ? 'delivered' : 'Pending'}}
                             </a>
                             </td>
                             <td>
-                              <a href="{{url('/admin/pdf')}}/{{ $items->id }}" class="btn btn-sm btn-primary">Print </a>
+                              <a href="{{url('/admin/pdf')}}/{{ $items->id }}" class="badge bg-primary">Print </a>
                             </td>
                             
                           </tr>
