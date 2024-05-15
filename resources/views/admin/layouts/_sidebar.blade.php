@@ -19,13 +19,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{url('admin/viewjob')}}">
           <i class="bi bi-person"></i>
-          <span>View Pending Jobs</span>
+          <span>Pending Jobs</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="{{url('admin/compleatejob')}}">
           <i class="bi bi-person"></i>
-          <span>Add Jobs</span>
+          <span>Compleated Jobs</span>
         </a>
       </li>
       <li class="nav-item">

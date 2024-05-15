@@ -1,19 +1,18 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Add Job | Sars Infotech Pvt Ltd')
+@section('title', 'Add Job | Awani Enterprises')
 
 
 @section('style')
 
-<style>
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-</style>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
 
 @endsection
 
@@ -68,7 +67,7 @@ input::-webkit-inner-spin-button {
                         <select id="class" class="form-select" name="device_type" autofocus>
                             <option selected>Choose Device...</option>
                             @foreach ($getRecord as $item)
-                                <option {{ old('device_type') == $item->id ? 'selected' : '' }} value="{{ $item->type}}">
+                                <option {{ old('device_type') == $item->id ? 'selected' : '' }} value="{{ $item->type }}">
                                     {{ $item->type }}</option>
                             @endforeach
                         </select>

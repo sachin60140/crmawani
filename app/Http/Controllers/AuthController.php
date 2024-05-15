@@ -87,21 +87,10 @@ class AuthController extends Controller
 
         $lastid=$customer->id;
 
-       /*  $CustomerModel = new CustomerModel;
-
-        $CustomerModel->name = $req->name;
-        $CustomerModel->mobile = $req->mobile_number;
-        $CustomerModel->address = $req->Address;
-        $CustomerModel->city = $req->city;
-        $CustomerModel->state = $req->state;
-        $CustomerModel->pincode = $req->pincode;
-        $CustomerModel->save();
-        $lastid = $CustomerModel->id; */
-
         $today = date('dmY');
         $serviceJobNumber = ServiceJobModel::where('job_no','like',$today.'%')->pluck('job_no');
         do {
-            $job_no =$today.rand(111111,999999);
+            $job_no = $today.rand(111111,999999);
         } while ($serviceJobNumber->contains($job_no));
 
         $ServiceJobModel = new ServiceJobModel;
@@ -116,86 +105,8 @@ class AuthController extends Controller
         $ServiceJobModel->remarks = $req->remarks;
         $ServiceJobModel->save();
         $lastid = $ServiceJobModel->id;
-        
-/* 
-        $data = array(
-            'phoneNumber' => $req->mobile_number,
-            'countryCode' => '+91',
-                'traits'    =>  [
-                    'name' => $req->name ,
-                    'City' => $req->city,
-                    'State' => $req->state
-                ],
-            'tags'=> ["Repair","IP Branch"]
-            );
-        $new_data = json_encode($data);
-        
-        $data2 = array(
-            'phoneNumber' => $req->mobile_number,
-            'countryCode' => '+91',
-            'callbackData' => "some text here",
-            'type' => 'Template',
-                'template'    =>  [
-                    'name' => "service_request_new" ,
-                    'languageCode' => "en",
-                    'State' => $req->state,
-                        'bodyValues'    =>  [
-                            $req->name ,
-                            $job_no ,
-                            $req->model_name." ".$req->device_type." S/N: ".$req->imei_1,
-                        ]
-                ]
-            );
-        $new_data2 = json_encode($data2);
-
-
-
-        $curl = curl_init();
-        $ch2 = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.interakt.ai/v1/public/track/users/',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => $new_data,
-            CURLOPT_HTTPHEADER => array(
-                'Content-Type: application/json',
-                'Authorization: Basic <V3hWeXNFdFd3cUpXTnU1ZnpFcDdsY1l4UkNjTFNmX2hVTUNaMDRWLVRPODo=>'
-            ),
-        ));
-
-
-        curl_setopt_array($ch2, array(
-            CURLOPT_URL => 'https://api.interakt.ai/v1/public/message/',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => $new_data2,
-            CURLOPT_HTTPHEADER => array(
-                'Content-Type: application/json',
-                'Authorization: Basic <V3hWeXNFdFd3cUpXTnU1ZnpFcDdsY1l4UkNjTFNmX2hVTUNaMDRWLVRPODo=>'
-            ),
-        ));
-
-         $response = curl_exec($curl);
-         $response2 = curl_exec($ch2);
-
-        curl_close($curl);
-        curl_close($ch2); */
-
-        // $response;
-        /* return $response. " two" .$response2;
- */
-        return back()->with('success', $lastid.' JOB Created Successfully');
+  
+        return back()->with('success', ' JOB Created Successfully: ' .$lastid);
 
     }
 
@@ -378,6 +289,43 @@ class AuthController extends Controller
         return $pdf->download($jobid.'.pdf');
     }
         
-    
+    public function updatejob($id)
+    {
+         $data['getRecords'] = ServiceJobModel::updatejob($id);
+         $data['getstatus'] = DB::table('dstatus')
+                            ->select('id','status')
+                            ->get();
+
+       return view('admin.updatejob', $data);
+    }
+
+    public function updatejobstatus(Request $req, $id)
+    {
+        $req->validate([
+            'job_status' => 'required',
+            'del_remarks' => 'required|min:3|max:50',
+            
+        ]);
+        
+        $mytime = Carbon::now('Asia/Kolkata')->format('Y-m-d H:i:s');
+        
+        $service =ServiceJobModel::find($id);
+
+        $service->status = $req->job_status;
+        $service->delivary_remarks = $req->del_remarks;
+                
+        $service->updated_at = $mytime;
+
+        $service->update();
+
+        return back()->with('success', 'Job Status Updated Succesfully');
+    }
+
+    public function compleatejob()
+    {
+        $data['getRecords'] = ServiceJobModel::getComleatedRecord();
+        
+        return view('admin.compleatejob', $data);
+    }
     
 }

@@ -35,5 +35,8 @@ Route::group(['middleware'=>'admin'],function()
     Route::get('admin/testnumber',[AuthController::class, 'testnumber']);
     Route::get('admin/viewjob',[AuthController::class, 'viewjobs']);
     Route::get('admin/pdf/{id}',[AuthController::class, 'viewpdf']);
+    Route::get('admin/updatestatus/{id}',[AuthController::class, 'updatejob']);
+    Route::put('admin/updatestatus/{id}',[AuthController::class, 'updatejobstatus']);
+    Route::get('admin/compleatejob',[AuthController::class, 'compleatejob']);
       
 });

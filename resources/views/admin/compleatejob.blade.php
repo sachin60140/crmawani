@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'View Jobs | Awani Enterprises')
+@section('title', 'Compleated Jobs | Awani Enterprises')
 
 
 @section('style')
@@ -18,7 +18,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item">Jobs</li>
-                <li class="breadcrumb-item active">View Job Status</li>
+                <li class="breadcrumb-item active">Compleated Job</li>
                 
             </ol>
         </nav>
@@ -29,7 +29,7 @@
     
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Pending Job Details</h5>
+                  <h5 class="card-title">Compleated Job Details</h5>
                   {{-- <h5 class="card-title"><a href="{{url("admin/employee/generate-pdf")}}" target="_blank" > click me to pdf </a></h5> --}}
                   
                   <!-- Table with stripped rows -->
@@ -43,9 +43,9 @@
                         <th scope="col">Device</th>
                         <th scope="col">Brand</th>
                         <th scope="col">S/N</th>
-                        <th scope="col">Defect</th>
-                        <th scope="col">Estimate</th>
-                        {{-- <th scope="col">Status</th> --}}
+                        <th scope="col">Deliverd on</th>
+                        
+                        <th scope="col">Status</th>
                         <th scope="col">Print</th>
                         
                       </tr>
@@ -62,13 +62,13 @@
                             <td>{{ $items->device_type }}</td>
                             <td>{{ $items->	brand }}</td>
                             <td>{{ $items->	imei_1 }}</td>
-                            <td>{{ $items->defect }}</td>
-                            <td>{{ $items->estimate }}</td>
-                            {{-- <td>
-                              <a href="" class=" badge bg-{{$items->status ? 'success' : 'danger'}}">
+                            <td>{{ $items->updated_at }}</td>
+                           
+                            <td>
+                              <a  class=" badge bg-{{$items->status ? 'success' : 'danger'}}">
                                 {{$items->status ? 'Delivered' : 'Pending'}}
                             </a>
-                            </td> --}}
+                            </td>
                             <td>
                               <a href="{{url('/admin/pdf')}}/{{ $items->id }}" class="badge bg-primary">Print </a>
                             </td>
