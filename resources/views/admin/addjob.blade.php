@@ -65,7 +65,7 @@
                     <div class="col-md-6 col-sm-12">
                         <label for="inputState" class="form-label">Device Type</label>
                         <select id="class" class="form-select" name="device_type" autofocus>
-                            <option selected>Choose Device...</option>
+                            <option selected value="">Choose Device...</option>
                             @foreach ($getRecord as $item)
                                 <option {{ old('device_type') == $item->id ? 'selected' : '' }} value="{{ $item->type }}">
                                     {{ $item->type }}</option>

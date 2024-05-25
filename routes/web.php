@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('optimize:clear');
+   Return 'Cache clear successfully';
+});
+
 Route::get('pass',[AuthController::class, 'pass']);
 
 Route::get('date',[AuthController::class, 'calculateDaysBetweenDates']);
@@ -38,5 +43,6 @@ Route::group(['middleware'=>'admin'],function()
     Route::get('admin/updatestatus/{id}',[AuthController::class, 'updatejob']);
     Route::put('admin/updatestatus/{id}',[AuthController::class, 'updatejobstatus']);
     Route::get('admin/compleatejob',[AuthController::class, 'compleatejob']);
+
       
 });
