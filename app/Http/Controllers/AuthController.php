@@ -328,9 +328,6 @@ class AuthController extends Controller
         return view('admin.compleatejob', $data);
     }
 
-    Route::get('/clear-cache', function() {
-        $exitCode = Artisan::call('optimize:clear');
-       Return 'Chache clear successfully';
-    });
+    
     
 }

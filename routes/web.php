@@ -18,11 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('optimize:clear');
-   Return 'Cache clear successfully';
-});
-
 Route::get('pass',[AuthController::class, 'pass']);
 
 Route::get('date',[AuthController::class, 'calculateDaysBetweenDates']);
