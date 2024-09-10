@@ -46,7 +46,7 @@
                     aria-label="Close"></button>
             </div>
         @endif
-    </div>
+    </div> 
     <div class="row">
         <div class="col-md-12">
             <div class="card">

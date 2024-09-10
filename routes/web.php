@@ -17,7 +17,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+ 
 Route::get('pass',[AuthController::class, 'pass']);
 
 Route::get('date',[AuthController::class, 'calculateDaysBetweenDates']);
