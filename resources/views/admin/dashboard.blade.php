@@ -71,7 +71,7 @@
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-currency-dollar"></i>
+                                        <i class="bi bi-currency-rupee"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{$todaycollection}}</h6>
@@ -89,7 +89,7 @@
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-currency-dollar"></i>
+                                        <i class="bi bi-currency-rupee"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{$curentmonthsum}}</h6>
@@ -103,14 +103,14 @@
                     <!-- Customers Card -->
                     <div class="col-xxl-4 col-xl-12">
 
-                        <div class="card info-card customers-card">
+                        <div class="card info-card revenue-card">
 
                             <div class="card-body">
                                 <h5 class="card-title">Revenue <span>| Previous Month</span></h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-people"></i>
+                                        <i class="bi bi-currency-rupee"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{$previosmonthsum}}</h6>

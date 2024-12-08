@@ -72,8 +72,8 @@
                         <td style="text-align: center">
                             <p><strong>Awani Enterprises</strong></p>
                             <p>UGF-4 & 5, Parasvanath Majestic Arcade</p>
-                            <p>Vaibhav Khand, Indirapuram, Ghazaibad</p>
-                            <p>Ph. 0120 220452152</p>
+                            <p>Vaibhav Khand, Indirapuram, Ghazaibad UP. 201014</p>
+                            <p>Ph. 0120-4400217 / WhatsApp :9871588801</p>
                         </td>
                     </tr>
 
@@ -187,121 +187,11 @@
                     <p>Sign</p>
                 </div>
             </div>
+            <div style="text-align: center">
+                <p>This is a Computer Generated Receipt, No Signature Required</p>
+            </div>
         </div>
     @endforeach
-    {{--     
-<div class="div1">
-
-    <div>
-        <table>
-            <tr>
-              <td class="myImg">
-                <img src="{{url('assets/img/logo.jpg')}}" width="200px" >
-
-              </td>
-              <td style="text-align: center">
-                <p>Job No.</p>
-                <p><strong>{{$getRecords[0]->job_no}}</strong></p>
-              </td>
-              <td style="text-align: center">
-                <p style="font-size:30px"><strong>Awani Enterprises</strong></p>
-                <p>UGF-4 & 5, Parasvanath Majestic Arcade</p>
-                <p>Vaibhav Khand, Indirapuram, Ghazaibad</p>
-                <p>Ph. 0120 220452152</p>
-              </td>
-            </tr>
-            
-          </table>
-    </div>
-    <div style="margin-top: 10px">
-        <table>
-            <tr>
-                <td class="tddata">Job No.</td>
-                <td class="tddata"><strong>{{$getRecords[0]->job_no}}</strong></td>
-                <td class="tddata">Date</td>
-                <td class="tddata">08/05/2024</td>
-            </tr>
-            <tr>
-                <td class="tddata">Customer Name</td>
-                <td class="tddata"><strong>{{$getRecords[0]->customer}}</strong></td>
-                <td class="tddata">Mobile No.</td>
-                <td class="tddata"><strong>{{$getRecords[0]->mobile}}</strong></td>
-            </tr>
-            <tr>
-                <td class="tddata">Address</td>
-                <td class="tddata" colspan="3"><strong>{{$getRecords[0]->address}}</strong></td>
-                
-            </tr>
-            <tr>
-                <td class="tddata">Device Type</td>
-                <td class="tddata"><strong>{{$getRecords[0]->device_type}}</strong></td>
-                <td class="tddata">Model No.</td>
-                <td class="tddata"><strong>{{$getRecords[0]->brand}}</strong></td>
-            </tr>
-            <tr>
-                <td class="tddata">IMEI/Sl No.</td>
-                <td class="tddata"><strong>{{$getRecords[0]->imei_1}}</strong></td>
-                <td class="tddata">IMEI/Sl No.(2)</td>
-                <td class="tddata"><strong>{{$getRecords[0]->imei_2}}</strong></td>
-            </tr>
-            <tr>
-                <td class="tddata">Defect Reported (as per Customer)</td>
-                <td class="tddata"><strong>{{$getRecords[0]->defect}}</strong></td>
-                <td class="tddata">Estimate</td>
-                <td class="tddata"><strong>&#x20b9; &nbsp;{{$getRecords[0]->estimate}}/-</strong></td>
-            </tr>
-            <tr>
-                <td class="tddata">Remarks</td>
-                <td class="tddata" colspan="3"><strong>{{$getRecords[0]->remarks}}</strong></td>
-            </tr>
-        </table>
-    </div>
-    <div>
-        <h3>Terms & Conditions</h3>
-        <hr>
-    </div>
-    <div>
-        <ol type="1">
-            <li>The repair service encompasses diagnosis, repair, and maintenance of computer peripherals including but not limited to printers, scanners, and external drives.</li>
-            <li>Services will be performed by qualified technicians.</li>
-            <li>Any additional services required beyond the initial diagnosis will be communicated and approved by the customer before proceeding.</li>
-            <li>Service charges will be communicated upfront, inclusive of diagnosis fees.</li>
-            <li>Any additional costs incurred during the repair process will be discussed with the customer before implementation.</li>
-            <li>Payment is due upon completion of the repair service.</li>
-            <li>Estimated repair time will be provided upon diagnosis.</li>
-            <li>While we strive to adhere to estimated timelines, unforeseen circumstances may cause delays. We will communicate any delays promptly.</li>
-            <li>Repairs are covered by a 7 Days warranty from the date of completion.</li>
-            <li>The warranty covers the specific repair performed and does not extend to unrelated issues or subsequent damages.</li>
-            <li>Warranty will be void if the repaired item is tampered with by anyone other than our authorized technicians.</li>
-            <li>Provide accurate information regarding the issue faced by the device.</li>
-            <li>Ensure the device is accessible to technicians during the agreed-upon service hours.</li>
-            <li>Backup important data before submitting the device for repair as data loss may occur during the repair process.</li>
-            <li>We are not liable for any data loss or damage to peripherals that occur during the repair process.</li>
-            <li>Our liability is limited to the cost of the repair service provided.</li>
-            <li>Cancellation of service must be communicated at least 1 Day before the scheduled service time.</li>
-            <li>Refunds will be provided in accordance with our refund policy, which may vary depending on the circumstances.</li>
-            <li>By availing of our repair services, the customer agrees to abide by these terms and conditions.</li>
-            <li>Any modifications to these terms and conditions must be agreed upon in writing by both parties.</li>
-            <li>These terms and conditions shall be governed by and construed in accordance with the laws of Ghaziabad jurisdiction</li>
-            <li>Any disputes arising from these terms and conditions will be subject to the exclusive jurisdiction of the courts in Ghaziabad jurisdiction </li>
-            
-            <li>By availing of our repair services, you acknowledge that you have read, understood, and agree to these terms and conditions.</li>
-            
-          </ol>  
-    </div>
-    <div style="margin: 150px 100px 200px 100px;">
-        
-        <div class="sign1">
-            <p>Customer Sign</p>
-        </div>
-        <div class="sign2">
-            
-            <p>Sign</p>
-        </div>
-    </div>
-    
-    
-</div> --}}
 </body>
 
 </html>
