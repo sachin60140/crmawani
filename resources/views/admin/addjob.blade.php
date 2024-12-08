@@ -96,8 +96,6 @@
                         <input type="text" class="form-control" id="inputName5" value="{{ old('defect') }}"
                             name="defect" required>
                     </div>
-
-
                     <div class="col-md-6">
                         <label for="fee" class="form-label">Estimate Amount <span style="color: red;">*</span></label>
                         <input type="fee" class="form-control" id="fee" value="{{ old('amount') }}"
@@ -108,13 +106,7 @@
                         <input type="text" class="form-control" id="inputName5" value="{{ old('remarks') }}"
                             name="remarks" required>
                     </div>
-                    {{-- <div class="col-md-12 mb-3">
-                        <label for="uploadfiles" class="form-label">Upload 5 Pic of Device<span
-                                style="color: red;">*</span></label>
-                        <div class="col-md-12">
-                            <input class="form-control" type="file" multiple id="uploadfiles" name="uploadfiles[]">
-                        </div>
-                    </div> --}}
+
                     <div class="col-md-6">
                         <label for="fee" class="form-label">Customer Name <span style="color: red;">*</span></label>
                         <input type="text" class="form-control" id="cab_fee" value="{{ old('name') }}"
@@ -157,10 +149,6 @@
                 </form><!-- End Multi Columns Form -->
 
             </div>
-        </div>
-
-
-
         </div>
     @endsection
 
