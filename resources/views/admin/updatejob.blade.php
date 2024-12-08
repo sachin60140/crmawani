@@ -103,7 +103,7 @@
                                     @csrf
                                     @method('PUT')
                                     <div class="row mb-4">
-                                        <div class="col-md-6 col-sm-12 mb-2" >
+                                        <div class="col-md-4 col-sm-12 mb-2" >
                                             <label for="state" class="form-label">Status</label>
                                             <select id="job_status" class="form-select" name="job_status">
                                                 @foreach ($getstatus as $item)
@@ -111,7 +111,14 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-md-6 col-sm-12 mb-2" >
+                                        <div class="col-md-4  mb-2" >
+                                            <label for="inputName5" class="form-label">Amount Collected<span
+                                                style="color: red;">*</span></label>
+                                        <input type="text" class="form-control" id="inputName5" value="{{ old('paid_amount') }} {{$getRecords['0']['paid_amount']}}"
+                                            name="paid_amount" required>
+                                        </div>
+
+                                        <div class="col-md-4  mb-2" >
                                             <label for="inputName5" class="form-label">Delivary Remarks<span
                                                 style="color: red;">*</span></label>
                                         <input type="text" class="form-control" id="inputName5" value="{{ old('del_remarks') }} {{$getRecords['0']['delivary_remarks']}}"

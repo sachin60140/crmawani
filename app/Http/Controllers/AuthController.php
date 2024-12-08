@@ -11,6 +11,7 @@ use App\Models\CustomerModel;
 use App\Models\ServiceJobModel;
 use \Carbon\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Redirect;
 
 
 
@@ -40,7 +41,32 @@ class AuthController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $data['pending_job'] = DB::table('service_job')->where('status','1')->count();
+        $data['delivered_job'] = DB::table('service_job')->where('status','2')->count();
+
+        $firstDayofPreviousMonth = Carbon::now()->startOfMonth()->subMonthsNoOverflow()->toDateString();
+        $lastDayofPreviousMonth = Carbon::now()->subMonthsNoOverflow()->endOfMonth()->toDateString();
+
+        $data['previosmonthsum'] = ServiceJobModel::select('*')
+                                ->whereBetween('updated_at',
+                                [$firstDayofPreviousMonth, $lastDayofPreviousMonth])->sum('paid_amount');
+
+
+
+        $data['todaycollection'] = DB::table('service_job')
+                            ->whereDate('updated_at', Carbon::today())
+                            ->sum('paid_amount');
+
+        $data['curentmonthsum'] = DB::table('service_job')
+                            ->whereMonth('updated_at', Carbon::now()->month)
+                            ->sum('paid_amount');
+
+
+        $data['payment_current_month'] = DB::table('service_job')->where('status','2')->count();
+
+
+
+        return view('admin.dashboard',$data);
     }
 
     public function addjobs()
@@ -304,7 +330,6 @@ class AuthController extends Controller
         $req->validate([
             'job_status' => 'required',
             'del_remarks' => 'required|min:3|max:50',
-            
         ]);
         
         $mytime = Carbon::now('Asia/Kolkata')->format('Y-m-d H:i:s');
@@ -312,13 +337,17 @@ class AuthController extends Controller
         $service =ServiceJobModel::find($id);
 
         $service->status = $req->job_status;
+        $service->paid_amount = $req->paid_amount;
         $service->delivary_remarks = $req->del_remarks;
                 
         $service->updated_at = $mytime;
 
         $service->update();
 
-        return back()->with('success', 'Job Status Updated Succesfully');
+        
+        return redirect('admin/viewjob')->with('success', 'Job Status Updated Succesfull');
+
+        //return back()->with('success', 'Job Status Updated Succesfully');
     }
 
     public function compleatejob()
