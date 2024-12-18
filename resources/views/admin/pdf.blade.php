@@ -57,23 +57,23 @@
                     <tr>
                         <td class="myImg">
                             {{-- <img src="{{url('assets/img/logo.jpg')}}" width="200px" > --}}
-                            <img src="assets/img/logo.jpg" width="100px" >
+                            <img src="assets/img/logo.jpg" width="100px">
 
                         </td>
                         <td style="text-align: center;">
                             <div style="margin: auto; width: 50%; padding: 10px;">
                                 <p>Job No.</p>
-                                <p> {!! DNS1D::getBarcodeHTML($data->job_no, 'C128', 1 , 30); !!}  </p></br>
+                                <p> {!! DNS1D::getBarcodeHTML($data->job_no, 'C128', 1, 30) !!} </p></br>
                                 <strong>{{ $data->job_no }}</strong>
                             </div>
-                            
-                            
+
+
                         </td>
                         <td style="text-align: center">
                             <p><strong>Awani Enterprises</strong></p>
                             <p>UGF-4 & 5, Parasvanath Majestic Arcade</p>
                             <p>Vaibhav Khand, Indirapuram, Ghazaibad UP. 201014</p>
-                            <p>Ph. 0120-4400217 / WhatsApp :9871588801</p>
+                            <p>Ph: 0120-4400217 / WhatsApp : 9871588801</p>
                         </td>
                     </tr>
 
@@ -86,8 +86,8 @@
                         <td class="tddata">Job No.</td>
                         <td class="tddata"><strong>{{ $data->job_no }}</strong></td>
                         <td class="tddata">Date</td>
-                        
-                        <td class="tddata">	{{date('d-M-Y', strtotime($data->created_at))}}</td>
+
+                        <td class="tddata"> {{ date('d-M-Y', strtotime($data->created_at)) }}</td>
                     </tr>
                     <tr>
                         <td class="tddata">Customer Name</td>

@@ -28,18 +28,6 @@
           <span>Compleated Jobs</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="">
-          <i class="bi bi-person"></i>
-          <span>Add Jobs</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="">
-          <i class="bi bi-person"></i>
-          <span>Add Jobs</span>
-        </a>
-      </li>
     </ul>
 
   </aside><!-- End Sidebar-->

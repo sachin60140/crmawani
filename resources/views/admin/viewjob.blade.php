@@ -83,7 +83,7 @@
                             <td>{{ $items->id }}</td>
                             <td>{{ $items->mobile }}</td>
                             <td>{{ $items->customer }}</td>
-                            <td>
+                            <td><i class="bi bi-pencil"></i>
                               <a href="{{url('/admin/updatestatus')}}/{{ $items->id }}">{{ $items->job_no }}
                             </td>
                             <td>{{ $items->device_type }}</td>

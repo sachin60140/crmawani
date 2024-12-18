@@ -45,7 +45,9 @@
                         <th scope="col">S/N</th>
                         <th scope="col">Deliverd on</th>
                         
+                        
                         <th scope="col">Status</th>
+                        <th scope="col">Payment</th>
                         <th scope="col">Print</th>
                         
                       </tr>
@@ -62,13 +64,14 @@
                             <td>{{ $items->device_type }}</td>
                             <td>{{ $items->	brand }}</td>
                             <td>{{ $items->	imei_1 }}</td>
-                            <td>{{ $items->updated_at }}</td>
+                            <td>{{ date('d-m-Y', strtotime($items->updated_at))  }}</td>
                            
                             <td>
                               <a  class=" badge bg-{{$items->status ? 'success' : 'danger'}}">
                                 {{$items->status ? 'Delivered' : 'Pending'}}
                             </a>
                             </td>
+                            <td style="text-align: right;">{{ $items->	paid_amount }}</td>
                             <td>
                               <a href="{{url('/admin/pdf')}}/{{ $items->id }}" class="badge bg-primary">Print </a>
                             </td>
@@ -109,7 +112,7 @@
         ],
         "pageLength": 50,
 
-        "aaSorting": [ [9,'asc'], [0,'desc'] ],
+        "aaSorting": [ 0,'desc' ],
     } );
 } );
     </script>
